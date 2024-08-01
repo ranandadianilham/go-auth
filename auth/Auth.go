@@ -24,9 +24,7 @@ func GenerateECDSAKey() (*ecdsa.PrivateKey, error) {
 func CreateToken(username string) (string, error) {
 	privateKey, err := GenerateECDSAKey()
 	if err != nil {
-		if err != nil {
-			return "", err
-		}
+		return "", err
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodES256,
